@@ -22,7 +22,7 @@ def draw_and_crop_images(image, contours):
     return image
 
 def main():
-    image_path = './test/IMG-20230514-WA0019.jpg'
+    image_path = './images/IMG-20230514-WA0019.jpg'
 
     # Membaca gambar dari file
     image = cv2.imread(image_path)
