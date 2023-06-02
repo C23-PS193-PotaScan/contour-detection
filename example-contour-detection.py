@@ -9,10 +9,10 @@ def preprocess_image(image):
 
 def detect_contours(image):
     # Deteksi tepi menggunakan Canny edge detection
-    edges = cv2.Canny(image, 50, 150)
+    _, mask = cv2.threshold(image, 170,30, cv2.THRESH_BINARY)
 
     # Mencari kontur dalam gambar biner
-    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     return contours
 
 def draw_and_crop_images(image, contours):
